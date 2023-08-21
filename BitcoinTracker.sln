@@ -1,0 +1,16 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BitcoinTracker", "BitcoinTracker\BitcoinTracker.csproj", "{74957672-78EA-4D29-BF76-B3748FE9C157}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{74957672-78EA-4D29-BF76-B3748FE9C157}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74957672-78EA-4D29-BF76-B3748FE9C157}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74957672-78EA-4D29-BF76-B3748FE9C157}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74957672-78EA-4D29-BF76-B3748FE9C157}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

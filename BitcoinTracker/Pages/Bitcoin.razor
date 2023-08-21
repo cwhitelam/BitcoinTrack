@@ -1,0 +1,71 @@
+﻿@page "/"
+@layout BlankLayout
+@using BitcoinTracker.Services
+@inject BitcoinService BitcoinService
+
+<div class="bitcoin-value-container">
+    @if (currentDateTime is { Month: 8, Day: 11 })
+    {
+        var birthdayNumber = currentDateTime.Year - 2023;
+        var suffix = GetSuffix(birthdayNumber);
+        <h3 class="bitcoin-value-title"><strong>Happy @birthdayNumber@suffix Birthday Jack!</strong></h3>
+        <h6 class="size">You're <a href="https://www.coindesk.com/price/bitcoin" target="_blank" class="gold-text">₿itcoin</a> is now worth:</h6>
+    }
+    else
+    {
+        <h3 class="bitcoin-value-title"><strong>Jack's <a href="https://www.coindesk.com/price/bitcoin" target="_blank" class="gold-text">₿itcoin</a> is worth:</strong></h3>
+    }
+
+    <div class="value-content">
+        @if (currentPrice == null)
+        {
+            <p class="bitcoin-value-text">Loading...</p>
+        }
+        else
+        {
+            <p class="bitcoin-value-amount">@(currentValue.ToString("C"))</p>
+        }
+        <p class="bitcoin-value-signature">-Uncle Chris 🦅</p>
+    </div>
+</div>
+
+
+@code {
+    private decimal? currentPrice;
+    private readonly decimal initialInvestment = 50;
+    private readonly decimal inputPrice = 26082; // Input price for 1 Bitcoin when the investment was made
+    private decimal currentValue;
+    private readonly DateTime currentDateTime = DateTime.Now;
+
+    private string GetSuffix(int number)
+    {
+        switch (number % 100)
+        {
+            case 11:
+            case 12:
+            case 13:
+                return "th";
+        }
+
+        switch (number % 10)
+        {
+            case 1:
+                return "st";
+            case 2:
+                return "nd";
+            case 3:
+                return "rd";
+            default:
+                return "th";
+        }
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        var bitcoinPrice = await BitcoinService.GetCurrentPriceAsync();
+        currentPrice = bitcoinPrice; // Current price for 1 Bitcoin
+        currentValue = currentPrice.Value * (initialInvestment / inputPrice);
+
+    }
+
+}

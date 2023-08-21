@@ -1,0 +1,57 @@
+body {
+    background-color: #181818;
+    color: #f0f0f0;
+}
+
+a, .gold-text {
+    color: gold;
+    text-decoration: none; /* Optional: to remove underline from the link */
+}
+
+.bitcoin-value-container {
+    font-family: Arial, sans-serif;
+    margin: 40px auto;
+    width: 85%;
+    max-width: 600px;
+    padding: 20px;
+    border: 1px solid #333;
+    background-color: #282828;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+    text-align: center;
+    color: #f0f0f0; /* Text color for the container */
+}
+
+.bitcoin-value-title {
+    color: #aaa;
+    font-size: 24px;
+}
+
+.bitcoin-value-text {
+    font-size: 18px;
+    color: #888;
+}
+
+.bitcoin-value-amount {
+    font-size: 48px;
+    font-weight: bold;
+    color: #ddd;
+}
+
+.bitcoin-value-signature {
+    font-style: italic;
+    color: #777;
+    margin-top: 20px;
+}
+
+.size {
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+}
+
+.date-time {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 14px;
+    color: #777;
+}
